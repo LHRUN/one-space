@@ -1,0 +1,17 @@
+.img-side {
+  display: flex;
+}
+
+.img-top {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .img-side  {
+    display: none;
+  }
+
+  .img-top {
+    display: block;
+  }
+}

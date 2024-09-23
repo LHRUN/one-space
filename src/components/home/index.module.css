@@ -1,0 +1,70 @@
+.letter {
+  width: 16rem;
+  height: 6.3rem;
+}
+
+.letter path {
+  stroke-dasharray: 120; /* 假设路径总长为300，实际根据路径的长度调整 */
+  stroke-dashoffset: 120;
+  animation: draw 10s ease-in-out infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 120; /* 起始时完全未描边 */
+  }
+  50% {
+    stroke-dashoffset: 0; /* 完全描边 */
+  }
+  100% {
+    stroke-dashoffset: 120; /* 完全消失 */
+  }
+}
+
+.title {
+  font-size: 6rem;
+}
+
+@media screen and (max-width: 830px) {
+  .title {
+    font-size: 5rem;
+  }
+
+  .letter {
+    width: 15rem;
+    height: 6rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  .letter {
+    width: 12rem;
+    height: 5rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .letter {
+    width: 11rem;
+    height: 4rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .letter {
+    width: 8rem;
+    height: 3rem;
+  }
+}
