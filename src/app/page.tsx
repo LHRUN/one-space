@@ -1,8 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import * as THREE from 'three'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js'
 
 import Tabs from "@/components/tabs"
 import HomeComponent from '@/components/home'
@@ -20,10 +21,14 @@ export default function Home() {
   const [statueMesh, setStatueMesh] = useState<MESH | null>(null)
   useEffect(() => {
     const loader = new GLTFLoader()
+    const dracoLoader = new DRACOLoader()
+    dracoLoader.setDecoderPath('/gltf/')
+
+    loader.setDRACOLoader(dracoLoader)
     loader.load('/statue.glb', (gltf) => {
-      const model = gltf.scene;
+      const model = gltf.scene
       setStatueMesh(model)
-    });
+    })
   }, [])
 
   return (

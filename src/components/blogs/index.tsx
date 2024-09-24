@@ -9,17 +9,20 @@ const blogList = [
   {
     img: '/projects/paint-board.png',
     title: 'Exploring the Canvas Series: Creative Brushes Part 3',
-    date: 'Apr 16, 2024'
+    date: 'Apr 16, 2024',
+    link: 'https://songlh.top/2024/04/16/Exploring-the-Canvas-Series-Creative-Brushes-Part-3/'
   },
   {
     img: '/projects/paint-board.png',
     title: 'Exploring the Canvas Series: Creative Brushes Part 2',
-    date: 'Apr 15, 2024'
+    date: 'Apr 15, 2024',
+    link: 'https://songlh.top/2024/04/15/Exploring-the-Canvas-Series-Creative-Brushes-Part-2/'
   },
   {
     img: '/projects/paint-board.png',
     title: 'Exploring the Canvas Series: Creative Brushes Part 1',
-    date: 'Apr 14, 2024'
+    date: 'Apr 14, 2024',
+    link: 'https://songlh.top/2024/04/14/Exploring-the-Canvas-Series-Creative-Brushes-Part-1/'
   },
 ]
 
@@ -40,9 +43,11 @@ const Blogs = () => {
         <div className="w-full px-12 py-6 relative z-[1]">
           {
             blogList.map((blog, index) => (
-              <div
+              <a
                 key={index}
                 className="flex py-10 border-b-[1px] border-solid border-[#6D5D6E] gap-x-8"
+                href={blog.link}
+                target="_blank"
               >
                 <Image
                   src={blog.img}
@@ -55,15 +60,15 @@ const Blogs = () => {
                   <div className={classNames(`text-lg`, BreeSerifFont.className)}>{blog.date}</div>
                   <div className={classNames(`text-2xl mt-2`, BreeSerifFont.className)}>{blog.title}</div>
                 </div>
-              </div>
+              </a>
             ))
           }
 
           <div className="flex justify-center w-full">
-            <div className="inline-flex items-center px-5 py-2 rounded-3xl mt-8 mx-auto cursor-pointer hover:scale-105 transition-all bg-[#2C3333]">
+            <a href="https://songlh.top/archives/" target="_blank" className="inline-flex items-center px-5 py-2 rounded-3xl mt-8 mx-auto cursor-pointer hover:scale-105 transition-all bg-[#2C3333]">
               <span className={classNames(`text-white mr-4`, BreeSerifFont.className)}>View More</span>
               <NavSvg className="w-4 h-4" />
-            </div>
+            </a>
           </div>
         </div>
         <div className="w-full h-full bg-repeat bg-[url('/background.png')] bg-[length:100px_100px] opacity-15 absolute top-0 left-0 z-[0] rounded-3xl">
