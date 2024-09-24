@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react"
 import { SECTION_TYPE } from "../tabs/constants";
 import styles from './index.module.css'
-import Image from 'next/image'
 import GithubSVG from '@/assets/icon/github.svg'
 import TwitterSVG from '@/assets/icon/twitter.svg'
 import GmailSVG from '@/assets/icon/gmail.svg'
@@ -47,31 +46,30 @@ const About = () => {
       id={SECTION_TYPE.ABOUT}
       className="flex flex-col items-center justify-center pt-28 w-[90%] max-w-[1040px] mx-auto"
     >
-      <motion.div
+      <div
         ref={imgRef}
-        style={{
-          borderRadius,
-        }}
-        className={classNames(`relative cursor-pointer overflow-hidden w-64 h-64`, styles.avatar)}
+        className={classNames(`relative cursor-pointer w-64 h-64`, styles.avatar)}
       >
-        <Image
+        <motion.img
           src="/profile_cover-pixelicious.png"
           width={100}
           height={100}
-          alt="user"
           className="w-full h-full absolute top-0 left-0 z-[1]"
           style={{
+            borderRadius,
             backfaceVisibility: 'hidden',
           }}
         />
-        <Image
-          src="/profile_cover.jpeg"
+        <motion.img
+          src="/profile_cover.jpg"
           width={100}
           height={100}
-          alt="user"
           className="w-full h-full absolute top-0 left-0"
+          style={{
+            borderRadius
+          }}
         />
-      </motion.div>
+      </div>
 
       <div className={classNames(`text-2xl`, BreeSerifFont.className)}>
         <div className="flex items-center justify-center gap-x-3 mt-16 mb-10">

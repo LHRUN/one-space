@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import * as THREE from 'three';
-import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 import Tabs from "@/components/tabs"
 import HomeComponent from '@/components/home'
@@ -14,17 +14,15 @@ import StatueModel from '@/components/statueModel'
 import PageFooter from "@/components/pageFooter"
 import LoadingSVG from "@/assets/icon/loading.svg"
 
-export type MESH = THREE.Mesh<THREE.BufferGeometry<THREE.NormalBufferAttributes>, THREE.MeshPhongMaterial, THREE.Object3DEventMap>
+export type MESH = THREE.Group<THREE.Object3DEventMap>
 
 export default function Home() {
   const [statueMesh, setStatueMesh] = useState<MESH | null>(null)
   useEffect(() => {
-    const loader = new STLLoader()
-    loader.load('/BeardedMan.stl', (geometry) => {
-      const material = new THREE.MeshPhongMaterial({ color: 0x555555 })
-      const mesh = new THREE.Mesh(geometry, material)
-      geometry.center()
-      setStatueMesh(mesh)
+    const loader = new GLTFLoader()
+    loader.load('/statue.glb', (gltf) => {
+      const model = gltf.scene;
+      setStatueMesh(model)
     });
   }, [])
 

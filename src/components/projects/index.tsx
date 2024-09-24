@@ -1,8 +1,8 @@
 import classNames from "classnames"
-import { motion } from "framer-motion";
 import { MonotonFont, BreeSerifFont } from "@/common/font"
 import { SECTION_TYPE } from "../tabs/constants";
 import Link from "../link";
+import Image from 'next/image'
 import styles from './index.module.css'
 
 const projectList = [
@@ -36,10 +36,10 @@ const projectList = [
     desc: 'md-editor is a markdown-it based markdown editor, including sync scrolling, multi file record,upload and download, generate toc, menu edit btn, code block theme switch, content state local cache...'
   },
   {
-    img: '/projects/work.png',
+    img: '/projects/work.svg',
     title: 'My Work',
     desc: 'The above are open source projects that I develop in my spare time. At work, I am a front-end development engineer mainly responsible for C-end projects, focusing on media and e-commerce industry. My work involves multiple platforms, including PC, mobile, mini program and APP. Brands worked and served include Converse, Coach, UA, and DJCars.',
-    maxWidth: '200px'
+    maxWidth: '170px'
   }
 ]
 
@@ -72,12 +72,15 @@ const Projects = () => {
                   <div className={classNames(`w-1/2 flex-1`, BreeSerifFont.className)}>
                     <div className="text-4xl text-center font-black">{project.title}</div>
 
-                    <motion.img
+                    <Image
                       src={project.img}
-                      className={classNames(`w-full h-auto rounded-3xl py-5 mx-auto`, styles['img-top'])}
+                      className={classNames(`w-full h-auto rounded-xl my-5 mx-auto`, styles['img-top'])}
                       style={{
                         maxWidth: project.maxWidth || 'auto'
                       }}
+                      alt="projectImage"
+                      width={80}
+                      height={80}
                     /> 
 
                     {
@@ -115,22 +118,16 @@ const Projects = () => {
                   </div>
 
                   <div className={classNames(`w-1/2 h-fit shrink-0 sticky top-20 justify-center`, styles['img-side'])}>
-                    <motion.img
+                    <Image
                       src={project.img}
-                      className="w-full h-fit rounded-3xl"
-                      animate={{
-                        translateY: [0, '10px', '0px', '-10px', 0]
-                      }}
-                      transition={{
-                        duration: 3,
-                        ease: "linear",
-                        times: [0, 0.2, 0.5, 0.8, 1],
-                        repeat: Infinity,
-                      }}
+                      width={200}
+                      height={200}
+                      className="w-full h-fit rounded-xl"
+                      alt="projectImg"
                       style={{
                         maxWidth: project.maxWidth || 'auto'
                       }}
-                    /> 
+                    />
                   </div>
                 </div>
               ))

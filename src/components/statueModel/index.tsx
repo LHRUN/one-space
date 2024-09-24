@@ -24,14 +24,11 @@ const StatueModel: FC<IProps> = ({ statueMesh }) => {
       containerRef.current.appendChild(renderer.domElement);
     }
 
-    const pointLight = new THREE.PointLight(0xffffff, 30);
+    const pointLight = new THREE.PointLight(0xffffff, 7);
     pointLight.position.set(1, 1, 1);
     scene.add(pointLight);
 
     if (statueMesh) {
-      const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
-      statueMesh.rotation.x = (scrollPercentage * 2 * Math.PI + Math.PI);
-      statueMesh.rotation.y = scrollPercentage * 2 * Math.PI;
       scene.add(statueMesh)
       camera.lookAt(statueMesh.position)
     }
@@ -40,8 +37,8 @@ const StatueModel: FC<IProps> = ({ statueMesh }) => {
       if (statueMesh) {
         const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
 
-        statueMesh.rotation.x = (scrollPercentage * 2 * Math.PI + Math.PI);
-        statueMesh.rotation.y = scrollPercentage * 2 * Math.PI;
+        statueMesh.rotation.x = scrollPercentage * 2 * Math.PI
+        statueMesh.rotation.y = scrollPercentage * 2 * Math.PI
       }
     };
     window.addEventListener('scroll', onScroll);
