@@ -25,7 +25,7 @@ const projectList = [
   {
     img: '/projects/one-space.png',
     title: 'One Space',
-    link: 'https://songlh.top',
+    link: 'https://about.songlh.top',
     desc: 'One Space is the current website, as the first window to present myself, welcome to browse!'
   },
   {
