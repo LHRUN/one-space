@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from "next"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "One Space",
   description: "One Space",
   icons: {
-    icon: '/favicon.svg'
+    icon: "/favicon.svg"
   }
-};
+}
 
 export default function RootLayout({
   children,
@@ -20,5 +20,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  );
+  )
 }

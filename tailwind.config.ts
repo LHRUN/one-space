@@ -1,4 +1,13 @@
 import type { Config } from "tailwindcss";
+import plugin from 'tailwindcss/plugin';
+
+const rotateY = plugin(function ({ addUtilities }) {
+  addUtilities({
+    '.rotate-y-180': {
+      transform: 'rotateY(180deg)',
+    },
+  })
+})
 
 const config: Config = {
   content: [
@@ -8,12 +17,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      screens: {
+        'max-600': {'max': '600px'}
       },
+      spacing: {
+        'word-1': '0.25rem',
+        'word-2': '0.5rem',
+        'word-4': '1rem',
+      }
     },
   },
-  plugins: [],
+  plugins: [rotateY],
 };
 export default config;

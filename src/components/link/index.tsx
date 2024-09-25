@@ -1,5 +1,5 @@
 import { FC } from "react"
-import styles from './index.module.css'
+import styles from "./index.module.css"
 
 interface IProps {
   href: string

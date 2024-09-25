@@ -1,32 +1,32 @@
-import React, { useRef, useEffect, FC } from 'react';
-import * as THREE from 'three';
-import { MESH } from '@/app/page';
+import React, { useRef, useEffect, FC } from "react"
+import * as THREE from "three"
+import { MESH } from "@/app/page"
 
 interface IProps {
   statueMesh: MESH | null
 }
 
 const StatueModel: FC<IProps> = ({ statueMesh }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const scene = new THREE.Scene();
+    const scene = new THREE.Scene()
 
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(4, 0, 0);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+    camera.position.set(4, 0, 0)
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true
-    });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    })
+    renderer.setSize(window.innerWidth, window.innerHeight)
     if (containerRef.current) {
-      containerRef.current.appendChild(renderer.domElement);
+      containerRef.current.appendChild(renderer.domElement)
     }
 
-    const pointLight = new THREE.PointLight(0xffffff, 7);
-    pointLight.position.set(1, 1, 1);
-    scene.add(pointLight);
+    const pointLight = new THREE.PointLight(0xffffff, 7)
+    pointLight.position.set(1, 1, 1)
+    scene.add(pointLight)
 
     if (statueMesh) {
       scene.add(statueMesh)
@@ -40,19 +40,19 @@ const StatueModel: FC<IProps> = ({ statueMesh }) => {
         statueMesh.rotation.x = scrollPercentage * 2 * Math.PI
         statueMesh.rotation.y = scrollPercentage * 2 * Math.PI
       }
-    };
-    window.addEventListener('scroll', onScroll);
+    }
+    window.addEventListener("scroll", onScroll)
 
     const onWindowResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-    window.addEventListener('resize', onWindowResize);
+      camera.aspect = window.innerWidth / window.innerHeight
+      camera.updateProjectionMatrix()
+      renderer.setSize(window.innerWidth, window.innerHeight)
+    }
+    window.addEventListener("resize", onWindowResize)
 
     const onMouseMove = (event: MouseEvent) => {
       handleMove(event.clientX, event.clientY)
-    };
+    }
 
     const onTouchMove = (event: TouchEvent) => {
       const touch = event?.touches?.[0]
@@ -65,36 +65,36 @@ const StatueModel: FC<IProps> = ({ statueMesh }) => {
       const originX = window.innerWidth / 2
       const originY = window.innerHeight / 2
 
-      const mouseX = ((originX - x) / window.innerWidth) * 2;
-      const mouseY = -((y - originY) / window.innerHeight) * 2;
+      const mouseX = ((originX - x) / window.innerWidth) * 2
+      const mouseY = -((y - originY) / window.innerHeight) * 2
 
-      pointLight.position.set(2, mouseY * 2, mouseX * 2);
+      pointLight.position.set(2, mouseY * 2, mouseX * 2)
     }
 
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener("mousemove", onMouseMove)
+    window.addEventListener("touchmove", onTouchMove)
 
     const animate = () => {
-      requestAnimationFrame(animate);
-      renderer.render(scene, camera);
-    };
-    animate();
+      requestAnimationFrame(animate)
+      renderer.render(scene, camera)
+    }
+    animate()
 
     return () => {
-      window.removeEventListener('resize', onWindowResize)
-      window.removeEventListener('mousemove', onMouseMove)
-      window.removeEventListener('touchmove', onTouchMove)
-      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener("resize", onWindowResize)
+      window.removeEventListener("mousemove", onMouseMove)
+      window.removeEventListener("touchmove", onTouchMove)
+      window.removeEventListener("scroll", onScroll)
       if (containerRef.current) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        containerRef.current.removeChild(renderer.domElement);
+        containerRef.current.removeChild(renderer.domElement)
       }
-    };
-  }, [statueMesh]);
+    }
+  }, [statueMesh])
 
   return (
     <div className='fixed top-0 left-0 w-full h-screen z-[0] opacity-40' ref={containerRef}></div>
-  );
-};
+  )
+}
 
-export default StatueModel;
+export default StatueModel

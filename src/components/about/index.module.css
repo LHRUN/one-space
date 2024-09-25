@@ -1,7 +1,0 @@
-.avatar > img {
-  transition: transform 0.5s ease-in-out;
-}
-
-.avatar:hover > img {
-  transform: rotateY(180deg);
-}

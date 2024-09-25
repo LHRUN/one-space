@@ -7,7 +7,7 @@ export const throttle: ThFn = (fn, timer) => {
     if (time) clearTimeout(time)
     time = setTimeout(() => {
       fn.apply(this, args)
-    }, timer);
+    }, timer)
   }
   return _throttle
 }

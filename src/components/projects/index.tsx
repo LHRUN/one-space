@@ -1,45 +1,45 @@
 import classNames from "classnames"
 import { MonotonFont, BreeSerifFont } from "@/common/font"
-import { SECTION_TYPE } from "../tabs/constants";
-import Link from "../link";
-import Image from 'next/image'
-import styles from './index.module.css'
+import { SECTION_TYPE } from "../tabs/constants"
+import Link from "../link"
+import Image from "next/image"
 
 const projectList = [
   {
-    img: '/projects/paint-board.png',
-    title: 'Paint Board',
-    link: 'https://songlh.top/paint-board',
-    github: 'https://github.com/LHRUN/paint-board',
-    desc: 'Paint Board is a powerful WEB-based creative drawing board that integrates a variety of creative brushes and assistive drawing functions, allowing users to experience a new drawing effect. All the content is free, no login, instant use. At present, it has supported multiple terminals, whether it is mobile terminal, or PC terminal, all have better interactive experience and effect display.',
-    author: `Paint Board is the project that I have invested the most effort in outside of work. From the preliminary research, to the prototype design and technical solution, to the in-depth study of colour matching and user interaction in the design stage, and the operation and promotion in the later stage, this project has greatly improved my ability in all aspects. Since its launch, Paint Board has also gained a lot of attention, which gives me a great sense of achievement and confidence to carry on. \n You are more than welcome to try it out! If you have any ideas, or found any bugs, please feel free to contact me, we can discuss and improve it together.`
+    img: "/projects/paint-board.png",
+    title: "Paint Board",
+    link: "https://songlh.top/paint-board",
+    github: "https://github.com/LHRUN/paint-board",
+    desc: "Paint Board is a powerful WEB-based creative drawing board that integrates a variety of creative brushes and assistive drawing functions, allowing users to experience a new drawing effect. All the content is free, no login, instant use. At present, it has supported multiple terminals, whether it is mobile terminal, or PC terminal, all have better interactive experience and effect display.",
+    author: "Paint Board is the project that I have invested the most effort in outside of work. From the preliminary research, to the prototype design and technical solution, to the in-depth study of colour matching and user interaction in the design stage, and the operation and promotion in the later stage, this project has greatly improved my ability in all aspects. Since its launch, Paint Board has also gained a lot of attention, which gives me a great sense of achievement and confidence to carry on. \n You are more than welcome to try it out! If you have any ideas, or found any bugs, please feel free to contact me, we can discuss and improve it together."
   },
   {
-    img: '/projects/bubble.png',
-    title: 'Bubble',
-    link: 'https://bubble-awesome-profile.vercel.app',
-    github: 'https://github.com/LHRUN/bubble',
-    desc: `Bubble is a platform dedicated to collecting GitHub Profile components, bringing together the coolest Profile and README components on GitHub. Users can log in, like and mark their favourite profiles. Currently, there are various styles of Profile components on the platform, which can satisfy the needs of different developers. If you don't have any inspiration at the moment, you can also check out other people's excellent configurations and presentations in the Profile tab for inspiration.`,
-    author: `Bubble was the first project I worked on when I first got into full-stack, using a technology stack of Next.js + Prisma + PostgreSQL + NextAuth, in the hope that it would open up the world of full-stack as a first step into independent development.`
+    img: "/projects/bubble.png",
+    title: "Bubble",
+    link: "https://bubble-awesome-profile.vercel.app",
+    github: "https://github.com/LHRUN/bubble",
+    desc: "Bubble is a platform dedicated to collecting GitHub Profile components, bringing together the coolest Profile and README components on GitHub. Users can log in, like and mark their favourite profiles. Currently, there are various styles of Profile components on the platform, which can satisfy the needs of different developers. If you don't have any inspiration at the moment, you can also check out other people's excellent configurations and presentations in the Profile tab for inspiration.",
+    author: "Bubble was the first project I worked on when I first got into full-stack, using a technology stack of Next.js + Prisma + PostgreSQL + NextAuth, in the hope that it would open up the world of full-stack as a first step into independent development."
   },
   {
-    img: '/projects/one-space.png',
-    title: 'One Space',
-    link: 'https://about.songlh.top',
-    desc: 'One Space is the current website, as the first window to present myself, welcome to browse!'
+    img: "/projects/one-space.png",
+    title: "One Space",
+    link: "https://about.songlh.top",
+    github: "https://github.com/LHRUN/one-space",
+    desc: "One Space is the current website, as the first window to present myself, welcome to browse!"
   },
   {
-    img: '/projects/md-editor.png',
-    title: 'MD Editor',
-    link: 'https://songlh.top/md-editor',
-    github: 'https://github.com/LHRUN/md-editor',
-    desc: 'md-editor is a markdown-it based markdown editor, including sync scrolling, multi file record,upload and download, generate toc, menu edit btn, code block theme switch, content state local cache...'
+    img: "/projects/md-editor.png",
+    title: "MD Editor",
+    link: "https://songlh.top/md-editor",
+    github: "https://github.com/LHRUN/md-editor",
+    desc: "md-editor is a markdown-it based markdown editor, including sync scrolling, multi file record,upload and download, generate toc, menu edit btn, code block theme switch, content state local cache..."
   },
   {
-    img: '/projects/work.svg',
-    title: 'My Work',
-    desc: 'The above are open source projects that I develop in my spare time. At work, I am a front-end development engineer mainly responsible for C-end projects, focusing on media and e-commerce industry. My work involves multiple platforms, including PC, mobile, mini program and APP. Brands worked and served include Converse, Coach, UA, and DJCars.',
-    maxWidth: '170px'
+    img: "/projects/work.svg",
+    title: "My Work",
+    desc: "The above are open source projects that I develop in my spare time. At work, I am a front-end development engineer mainly responsible for C-end projects, focusing on media and e-commerce industry. My work involves multiple platforms, including PC, mobile, mini program and APP. Brands worked and served include Converse, Coach, UA, and DJCars.",
+    maxWidth: "170px"
   }
 ]
 
@@ -47,7 +47,7 @@ const Projects = () => {
   return (
     <div id={SECTION_TYPE.PROJECTS} className="w-full mt-32 pt-40 relative">
       <div
-        className={classNames(`w-full text-center text-6xl`, MonotonFont.className)}
+        className={classNames("w-full text-center text-6xl", MonotonFont.className)}
       >
         Projects
       </div>
@@ -56,7 +56,7 @@ const Projects = () => {
         <div
           className="w-[90%] max-w-[1040px] mt-20 mx-auto relative rounded-3xl"
           style={{
-            boxShadow: 'rgba(0, 0, 0, 0.2) 0px 12px 15px 0px'
+            boxShadow: "rgba(0, 0, 0, 0.2) 0px 12px 15px 0px"
           }}
         >
           <div className="relative z-[2]">
@@ -66,21 +66,22 @@ const Projects = () => {
                   className="flex px-10 gap-x-4 relative py-12"
                   key={index}
                   style={{
-                    flexDirection: index % 2 === 0 ? 'row' : 'row-reverse'
+                    flexDirection: index % 2 === 0 ? "row" : "row-reverse",
+                    wordSpacing: "0.2rem"
                   }}
                 >
-                  <div className={classNames(`w-1/2 flex-1`, BreeSerifFont.className)}>
+                  <div className={classNames("w-1/2 flex-1", BreeSerifFont.className)}>
                     <div className="text-4xl text-center font-black">{project.title}</div>
 
                     <Image
                       src={project.img}
-                      className={classNames(`w-full h-auto rounded-xl my-5 mx-auto`, styles['img-top'])}
+                      className="w-full h-auto rounded-xl my-5 mx-auto hidden max-600:block"
                       style={{
-                        maxWidth: project.maxWidth || 'auto'
+                        maxWidth: project.maxWidth || "auto"
                       }}
                       alt="projectImage"
-                      width={80}
-                      height={80}
+                      width={200}
+                      height={200}
                     /> 
 
                     {
@@ -117,7 +118,7 @@ const Projects = () => {
                     }
                   </div>
 
-                  <div className={classNames(`w-1/2 h-fit shrink-0 sticky top-20 justify-center`, styles['img-side'])}>
+                  <div className="w-1/2 h-fit shrink-0 sticky top-20 justify-center flex max-600:hidden">
                     <Image
                       src={project.img}
                       width={200}
@@ -125,7 +126,7 @@ const Projects = () => {
                       className="w-full h-fit rounded-xl"
                       alt="projectImg"
                       style={{
-                        maxWidth: project.maxWidth || 'auto'
+                        maxWidth: project.maxWidth || "auto"
                       }}
                     />
                   </div>

@@ -6,7 +6,7 @@
 .tab-item-active {
   width: 5rem;
   font-size: 16px;
-  left: calc(var(--active) * 5rem + 0.25rem)
+  left: calc(var(--active-index) * 5rem + 0.25rem)
 }
 
 @media screen and (max-width: 460px) {
@@ -18,7 +18,7 @@
   .tab-item-active {
     width: 4rem;
     font-size: 14px;
-    left: calc(var(--active) * 4rem + 0.25rem)
+    left: calc(var(--active-index) * 4rem + 0.25rem)
   }
 }
 
@@ -31,6 +31,6 @@
   .tab-item-active {
     width: 3rem;
     font-size: 12px;
-    left: calc(var(--active) * 3rem + 0.25rem)
+    left: calc(var(--active-index) * 3rem + 0.25rem)
   }
 }

@@ -1,17 +1,17 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import * as THREE from 'three'
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js'
+import * as THREE from "three"
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
+import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js"
 
 import Tabs from "@/components/tabs"
-import HomeComponent from '@/components/home'
+import HomeComponent from "@/components/home"
 import About from "@/components/about"
 import Projects from "@/components/projects"
 import Stack from "@/components/stack"
 import Blogs from "@/components/blogs"
-import StatueModel from '@/components/statueModel'
+import StatueModel from "@/components/statueModel"
 import PageFooter from "@/components/pageFooter"
 import LoadingSVG from "@/assets/icon/loading.svg"
 
@@ -22,10 +22,10 @@ export default function Home() {
   useEffect(() => {
     const loader = new GLTFLoader()
     const dracoLoader = new DRACOLoader()
-    dracoLoader.setDecoderPath('/gltf/')
+    dracoLoader.setDecoderPath("/gltf/")
 
     loader.setDRACOLoader(dracoLoader)
-    loader.load('/statue.glb', (gltf) => {
+    loader.load("/statue.glb", (gltf) => {
       const model = gltf.scene
       setStatueMesh(model)
     })

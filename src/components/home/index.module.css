@@ -4,20 +4,20 @@
 }
 
 .letter path {
-  stroke-dasharray: 120; /* 假设路径总长为300，实际根据路径的长度调整 */
+  stroke-dasharray: 120;
   stroke-dashoffset: 120;
   animation: draw 10s ease-in-out infinite;
 }
 
 @keyframes draw {
   0% {
-    stroke-dashoffset: 120; /* 起始时完全未描边 */
+    stroke-dashoffset: 120;
   }
   50% {
-    stroke-dashoffset: 0; /* 完全描边 */
+    stroke-dashoffset: 0;
   }
   100% {
-    stroke-dashoffset: 120; /* 完全消失 */
+    stroke-dashoffset: 120;
   }
 }
 
