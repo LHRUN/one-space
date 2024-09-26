@@ -14,9 +14,9 @@
   </a>
 </div>
 
-Welcome to One Space, looking forward to your DIY, if you feel good about it you are welcome to click Star ⭐️, thanks!
+One Space is a personal space page dedicated to showing yourself, if you feel good welcome Star ⭐️, thanks!
 
-欢迎来到 One Space, 期待你的 DIY, 如果感觉不错的话欢迎点个 Star ⭐️, 感谢支持
+One Space 是一个专门用于展示自己的个人空间页, 如果感觉不错的话欢迎 Star ⭐️, 感谢支持!
 
 link: [https://about.songlh.top/](https://about.songlh.top/)
 
