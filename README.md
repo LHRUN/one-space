@@ -20,7 +20,7 @@ One Space 是一个专门用于展示自己的个人空间页, 如果感觉不�
 
 link: [https://about.songlh.top/](https://about.songlh.top/)
 
-![](https://raw.githubusercontent.com/LHRUN/file-store/refs/heads/main/post/one-space.png)
+![](https://raw.githubusercontent.com/LHRUN/file-store/refs/heads/main/post/one-space-1.1.0.png)
 
 
 + Model
