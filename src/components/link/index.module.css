@@ -1,7 +1,7 @@
 .link {
   word-break: break-all;
   padding-bottom: 2px;
-  background-image: linear-gradient(#373633, #373633), linear-gradient(#373633, #373633);
+  background-image: linear-gradient(var(--color), var(--color)), linear-gradient(var(--color), var(--color));
   background-size: 100% 1px, 0 2px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat, no-repeat;

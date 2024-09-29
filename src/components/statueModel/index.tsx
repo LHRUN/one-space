@@ -25,7 +25,7 @@ const StatueModel: FC<IProps> = ({ statueMesh }) => {
     }
 
     const pointLight = new THREE.PointLight(0xffffff, 7)
-    pointLight.position.set(1, 1, 1)
+    pointLight.position.set(2, 1, 1)
     scene.add(pointLight)
 
     if (statueMesh) {

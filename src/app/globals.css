@@ -2,11 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer {
+  :root {
+    --background: #FFFFFF;
+    --color: #000000;
+  }
+
+  .dark {
+    --background: #3C3D37;
+    --color: #F5F5F5;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  background-color: #FFFFFF;
+  color: var(--color);
+  background: var(--background);
+}
+
+path, circle {
+  fill: var(--color);
 }
 
 .twinkle-display,

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import * as THREE from "three"
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js"
+import { ThemeProvider } from "@/context/theme"
 
 import Tabs from "@/components/tabs"
 import HomeComponent from "@/components/home"
@@ -33,27 +34,29 @@ export default function Home() {
 
   return (
     <div id="app">
-      {
-        statueMesh ? (
-          <>
-            <div className="bg-repeat bg-[url('/background.png')] bg-[length:200px_200px] opacity-15 fixed top-0 left-0 w-full h-screen z-1"></div>
-            <StatueModel statueMesh={statueMesh} />
-            <div className="w-full h-screen relative z-[2] ">
-              <Tabs />
-              <HomeComponent />
-              <About />
-              <Projects />
-              <Blogs />
-              <Stack />
-              <PageFooter />
+      <ThemeProvider>
+        {
+          statueMesh ? (
+            <>
+              <div className="bg-repeat bg-[url('/background.png')] bg-[length:200px_200px] opacity-15 fixed top-0 left-0 w-full h-screen z-1 dark:opacity-10"></div>
+              <StatueModel statueMesh={statueMesh} />
+              <div className="w-full h-screen relative z-[2] ">
+                <Tabs />
+                <HomeComponent />
+                <About />
+                <Projects />
+                <Blogs />
+                <Stack />
+                <PageFooter />
+              </div>
+            </>
+          ) : (
+            <div className="w-full h-screen flex justify-center items-center opacity-60">
+              <LoadingSVG className="w-16 h-16 animate-spin" />
             </div>
-          </>
-        ) : (
-          <div className="w-full h-screen flex justify-center items-center opacity-60">
-            <LoadingSVG className="w-16 h-16 animate-spin" />
-          </div>
-        )
-      }
+          )
+        }
+      </ThemeProvider>
     </div>
   )
 }

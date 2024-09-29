@@ -97,7 +97,7 @@ const About = () => {
               <a
                 href={item.email || item.link}
                 target="_blank"
-                className="p-1 border-black rounded-lg border-2 cursor-pointer hover:scale-110 transition-all"
+                className="p-1 border-black rounded-lg border-2 cursor-pointer hover:scale-110 transition-all dark:border-white"
                 key={index}
               >
                 <item.icon className="w-7 h-7" />

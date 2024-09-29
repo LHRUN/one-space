@@ -75,7 +75,7 @@ const Projects = () => {
 
                     <Image
                       src={project.img}
-                      className="w-full h-auto rounded-xl my-5 mx-auto hidden max-600:block"
+                      className="w-full h-auto rounded-xl my-5 mx-auto hidden max-600:block dark:opacity-80"
                       style={{
                         maxWidth: project.maxWidth || "auto"
                       }}
@@ -118,7 +118,7 @@ const Projects = () => {
                     }
                   </div>
 
-                  <div className="w-1/2 h-fit shrink-0 sticky top-20 justify-center flex max-600:hidden">
+                  <div className="w-1/2 h-fit shrink-0 sticky top-20 justify-center flex max-600:hidden dark:opacity-80">
                     <Image
                       src={project.img}
                       width={200}

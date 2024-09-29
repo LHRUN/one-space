@@ -9,7 +9,23 @@
   left: calc(var(--active-index) * 5rem + 0.25rem)
 }
 
-@media screen and (max-width: 460px) {
+.theme-light {
+  background-color: #000000;
+}
+
+.theme-light path {
+  fill: #FFFFFF
+}
+
+.theme-dark {
+  background-color: #FFFFFF;
+}
+
+.theme-dark path {
+  fill: #000000;
+}
+
+@media screen and (max-width: 560px) {
   .tab-item {
     width: 4rem;
     font-size: 14px;
@@ -22,7 +38,7 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 460px) {
   .tab-item {
     width: 3rem;
     font-size: 12px;

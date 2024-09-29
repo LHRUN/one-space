@@ -9,6 +9,10 @@
   animation: draw 10s ease-in-out infinite;
 }
 
+.letter path:first-child {
+  fill: #FFFFFF;
+}
+
 @keyframes draw {
   0% {
     stroke-dashoffset: 120;
