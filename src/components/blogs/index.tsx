@@ -7,6 +7,12 @@ import classNames from "classnames"
 const blogList = [
   {
     img: "/projects/paint-board.png",
+    title: "Exploring the Canvas Series: combined with Transformers.js to achieve intelligent image processing",
+    date: "Nov 23, 2024",
+    link: "https://songlh.top/2024/11/23/Exploring-the-Canvas-Series-combined-with-Transformers-js-to-achieve-intelligent-image-processing/"
+  },
+  {
+    img: "/projects/paint-board.png",
     title: "Exploring the Canvas Series: Creative Brushes Part 3",
     date: "Apr 16, 2024",
     link: "https://songlh.top/2024/04/16/Exploring-the-Canvas-Series-Creative-Brushes-Part-3/"
@@ -16,13 +22,7 @@ const blogList = [
     title: "Exploring the Canvas Series: Creative Brushes Part 2",
     date: "Apr 15, 2024",
     link: "https://songlh.top/2024/04/15/Exploring-the-Canvas-Series-Creative-Brushes-Part-2/"
-  },
-  {
-    img: "/projects/paint-board.png",
-    title: "Exploring the Canvas Series: Creative Brushes Part 1",
-    date: "Apr 14, 2024",
-    link: "https://songlh.top/2024/04/14/Exploring-the-Canvas-Series-Creative-Brushes-Part-1/"
-  },
+  }
 ]
 
 const Blogs = () => {
@@ -57,7 +57,7 @@ const Blogs = () => {
                 />
                 <div className="flex flex-col justify-center" >
                   <div className={classNames("text-lg", BreeSerifFont.className)}>{blog.date}</div>
-                  <div className={classNames("text-2xl mt-2", BreeSerifFont.className)}>{blog.title}</div>
+                  <div className={classNames("text-2xl mt-2 break-all", BreeSerifFont.className)}>{blog.title}</div>
                 </div>
               </a>
             ))
